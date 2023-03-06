@@ -1,8 +1,24 @@
 import React from 'react'
 import { Box, Typography, Link} from "@mui/material";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Navbar = () => {
+
+  const loggedIn= JSON.parse(localStorage.getItem('authToken'))
+  const navigate = useNavigate()
+  const handleLogout=async()=>{
+    try {
+      await axios.post("/api/v1/auth/logout")
+      localStorage.removeItem("authToken")
+      toast.success("logout succesfully")
+      navigate('/login')
+    } catch (error) {
+        console.log(error); 
+    }
+  }
+
   return (
     <Box
       width={"100%"}
@@ -14,12 +30,31 @@ const Navbar = () => {
       <Typography variant="h1" color="primary" fontWeight="bold">
         AI GPT3 Clone
       </Typography>
+
+      {
+        loggedIn ?(
+          <>
+          
+      <NavLink to='/login' onClick={handleLogout} p={1}>
+        Logout
+      </NavLink>
+     
+          </>
+
+        ):(
+          <>
+          
       <NavLink to='/register' p={1}>
         Sign up
       </NavLink>
       <NavLink to='/login' p={1}>
         Sign in
       </NavLink>
+          </>
+        )
+      }
+
+
       {/* {loggedIn ? (
         <>
           <NavLink to="/" p={1}>

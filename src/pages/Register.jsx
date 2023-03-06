@@ -18,16 +18,27 @@ const Register = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault()
     try {
-      const {data}= await axios.post('/api/v1/auth/register',{username, email, password})
+      await axios.post('/api/v1/auth/register',{username, email, password})
       toast.success("User registered succesfully")
       navigate('/login')
     } catch (error) {
       console.log(error);
+      if(error.response.data.error){
+        setError(error.response.data.error)
+      }else if(error.message){
+        setError(error.message)
+      }
+      setTimeout(()=>{
+        setError("")
+      },5000)
     }
   }
 
   return (
     <Box  width={isNotMobile? '40%' : '80%'} p={'2rem'} m={'2rem auto'} borderRadius={5} sx={{boxShadow:5}}   >
+      <Collapse in={error}>
+          <Alert severity="error" sx={{mb:2}}> {error} </Alert>
+      </Collapse>
       <form onSubmit={handleSubmit} action="">
             <Typography variant="h3">Sign Up</Typography>
             <TextField label="username" required margin="normal" fullWidth value={username} onChange={(e)=> setUsername(e.target.value)} />
