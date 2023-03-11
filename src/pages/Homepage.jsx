@@ -2,6 +2,9 @@ import React from 'react'
 import {Box,Typography, Card, Stack} from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import {DescriptionRounded, FormatAlignLeftOutlined} from '@mui/icons-material'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Feature from '../components/Feature'
 
 
 
@@ -9,61 +12,77 @@ const Homepage = () => {
   const navigate = useNavigate()
   return (
     <>
-    <Box sx={{display:'flex', flexDirection:'row'}} >
+    <div style={{marginTop:"100px"}}>
+      <Header/>
+    </div>
+    <div>
+      <Feature/>
+    </div>
+    <div className='container' style={{display:'flex', flexDirection:'row',justifyContent:"space-between", flexWrap:"wrap"}} >
      <Box>
-        <Typography variant='h4' mb={2} fontWeight="bold">
+        {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Text Generation
-        </Typography>
-        <Card onClick={()=> navigate('/summary')} sx={{boxShadow:2,borderRadius:5,height:290, width:250}}>
-          <DescriptionRounded sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/>
+        </Typography> */}
+        <Card className="cardnew" onClick={()=> navigate('/summary')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer" }}>
+          {/* <DescriptionRounded sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
+          <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
-              <Typography fontWeight="bold" variant="h5">Text Summary</Typography>
-              <Typography variant="h6">Summarize long text into short sentences</Typography>
+              <Typography fontWeight="bold" variant="h5" style={{ color:"#3b368c"}} >Text Summary</Typography>
+              <p >Summarize long text into short sentences</p>
           </Stack>
         </Card>
     </Box>
+
     <Box>
-        <Typography variant='h4' mb={2} fontWeight="bold">
+        {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Paragraph
-        </Typography>
-        <Card onClick={()=> navigate('/paragraph')} sx={{boxShadow:2,borderRadius:5,height:290, width:250}}>
-          <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/>
+        </Typography> */}
+        <Card className="cardnew" onClick={()=> navigate('/paragraph')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer" }}>
+          {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
+          <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
-              <Typography fontWeight="bold" variant="h5">Text Summary</Typography>
-              <Typography variant="h6">Generate paragraph with words</Typography>
+              <Typography fontWeight="bold" variant="h5" style={{ color:"#3b368c"}}>Text Summary</Typography>
+              <p>Generate paragraph with words</p>
           </Stack>
         </Card>
     </Box>
-
+              
     <Box>
-        <Typography variant='h4' mb={2} fontWeight="bold">
+        {/* <Typography variant='h4' mb={2} fontWeight="bold">
           AI ChatBot
-        </Typography>
-        <Card onClick={()=> navigate('/chatbot')} sx={{boxShadow:2,borderRadius:5,height:290, width:250}}>
-          <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/>
+        </Typography> */}
+        <Card className="cardnew" onClick={()=> navigate('/chatbot')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer"}}>
+          {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
+          <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
-              <Typography fontWeight="bold" variant="h5">Chat with AI BOT</Typography>
-              <Typography variant="h6">Generate paragraph with words</Typography>
+              <Typography fontWeight="bold" variant="h5" style={{ color:"#3b368c"}}>Chat with AI BOT</Typography>
+              <p variant="h6">Generate paragraph with words</p>
           </Stack>
         </Card>
     </Box>
 
     <Box>
-        <Typography variant='h4' mb={2} fontWeight="bold">
+        {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Js Converter
-        </Typography>
-        <Card onClick={()=> navigate('/js-converter')} sx={{boxShadow:2,borderRadius:5,height:290, width:250}}>
-          <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/>
+        </Typography> */}
+        <Card className="cardnew" onClick={()=> navigate('/js-converter')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer"}}>
+          {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
+          <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
-              <Typography fontWeight="bold" variant="h5">Js Converter</Typography>
-              <Typography variant="h6">Transate english toh Js code </Typography>
+              <Typography fontWeight="bold" variant="h5" style={{ color:"#3b368c"}}>Js Converter</Typography>
+              <p>Transate english toh Js code </p>
           </Stack>
         </Card>
     </Box>
 
 
 
-    </Box>
+    </div>
+
+<div>
+  <Footer/>
+</div>
+
     </>
    
   )

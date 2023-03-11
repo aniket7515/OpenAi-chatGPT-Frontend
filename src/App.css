@@ -1,0 +1,5 @@
+.cardnew:hover{
+    border-bottom: 3px solid #3b368c;
+transform: scale(1.1);
+    transition:all .4s ease;
+}

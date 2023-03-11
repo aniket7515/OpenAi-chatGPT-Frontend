@@ -9,7 +9,7 @@ import  { Toaster } from 'react-hot-toast';
 import Summary from './pages/Summary';
 import Paragraph from './pages/Paragraph';
 import ChatBot from './pages/ChatBot';
-import JsConverter from './pages/JsConverter';
+import JsConverter from './pages/JsConverter'
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
           <Route path='/chatbot' element={<ChatBot/>}/>
           <Route path='/js-converter' element={<JsConverter/>}/>
         </Routes>
+        
       </>
     </div>
   );
