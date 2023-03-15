@@ -9,6 +9,7 @@ import Feature from '../components/Feature'
 
 
 const Homepage = () => {
+  const loggedIn = JSON.parse(localStorage.getItem('authToken'))
   const navigate = useNavigate()
   return (
     <>
@@ -23,7 +24,7 @@ const Homepage = () => {
         {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Text Generation
         </Typography> */}
-        <Card className="cardnew" onClick={()=> navigate('/summary')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer" }}>
+        <Card className="cardnew" onClick={()=> loggedIn==true? navigate('/summary'):navigate('/')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer" }}>
           {/* <DescriptionRounded sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
           <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
@@ -37,7 +38,7 @@ const Homepage = () => {
         {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Paragraph
         </Typography> */}
-        <Card className="cardnew" onClick={()=> navigate('/paragraph')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer" }}>
+        <Card className="cardnew" onClick={()=> loggedIn==true? navigate('/paragraph'):navigate('/')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer" }}>
           {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
           <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
@@ -51,7 +52,7 @@ const Homepage = () => {
         {/* <Typography variant='h4' mb={2} fontWeight="bold">
           AI ChatBot
         </Typography> */}
-        <Card className="cardnew" onClick={()=> navigate('/chatbot')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer"}}>
+        <Card className="cardnew" onClick={()=> loggedIn==true? navigate('/chatbot'):navigate('/')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px", cursor:"pointer"}}>
           {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
           <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
@@ -65,7 +66,7 @@ const Homepage = () => {
         {/* <Typography variant='h4' mb={2} fontWeight="bold">
           Js Converter
         </Typography> */}
-        <Card className="cardnew" onClick={()=> navigate('/js-converter')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer"}}>
+        <Card className="cardnew" onClick={()=> loggedIn==true? navigate('/js-converter'):navigate('/')} sx={{boxShadow:2,borderRadius:5,height:390, width:350, textAlign:"center", padding:"12px" , marginBottom:"20px" , cursor:"pointer"}}>
           {/* <FormatAlignLeftOutlined sx={{fontSize:'80',color:'primary-main', mt:2, ml:2}}/> */}
           <img src="https://preview.uideck.com/items/cryptoland/assets/images/features/xfeature-icon-1.png.pagespeed.ic.h3D7JPwMSt.webp" alt="" />
           <Stack p={3} pt={0}>
